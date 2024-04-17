@@ -56,7 +56,7 @@ function Sidebar() {
                 <p className='text-[10px] font-extrabold leading-[16px] text-white/[0.4]'> ADDONS</p>
                 <div className='flex items-center justify-between gap-[10px] py-[10px] rounded cursor-pointer' style={highlight.logs? {backgroundColor: "#1976D2"} : {}}>
                     <div className='flex items-center gap-[10px]'>
-                        <FaStickyNote color='white' /> <Link onClick = {() => toggleHighlight("logs")} to ="/logs" className='text-[14px] leading-[20px] font-normal text-white'>Logs</Link>
+                        <FaStickyNote color='white' /><Link onClick = {() => toggleHighlight("logs")} to ="/logs" className='text-[14px] leading-[20px] font-normal text-white'>Logs</Link>
                     </div>
                     <FaChevronRight color='white' />
                 </div>
