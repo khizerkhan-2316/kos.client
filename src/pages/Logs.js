@@ -1,6 +1,6 @@
 function Logs() {
   return (
-    <div className="w-[80%] border ml-[20%]">
+    <div className="w-[87%] border ml-[13%]">
       <h1>Logs</h1>
     </div>
   );

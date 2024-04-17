@@ -1,6 +1,6 @@
 function Homepage() {
   return (
-    <div className="w-[80%] border ml-[20%]" style={{ background: '#F4F4F4' }}>
+    <div className="w-[87%] border ml-[13%]" style={{ background: '#F4F4F4' }}>
       <h1 className="mt-[100px] mb-4 text-4xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">Welcome, User's Name</h1>
       <h2 className="mt-[50px] mb-4 text-3xl font-semibold text-gray-900">Radiator Status</h2>
       
