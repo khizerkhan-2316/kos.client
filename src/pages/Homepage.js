@@ -21,7 +21,7 @@ function Homepage() {
               <td className="px-6 py-4">On</td>
               <td className="px-6 py-4">25°C</td>
               <td className="px-6 py-4">400 ppm</td>
-              <td className="px-6 py-4">4-16-2021</td>
+              <td className="px-6 py-4">4-17-2024</td>
             </tr>
           </tbody>
         </table>
@@ -31,7 +31,7 @@ function Homepage() {
       
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-900 bg-black bg-opacity-50 rounded-lg">
-          <thead className="text-xs uppercase bg-gray-200">
+          <thead className="text-xs uppercase bg-gray-200"> 
             <tr>
               <th scope="col" className="px-6 py-3">Id</th>
               <th scope="col" className="px-6 py-3">Status</th>
@@ -46,7 +46,7 @@ function Homepage() {
               <td className="px-6 py-4">Closed</td>
               <td className="px-6 py-4">25°C</td>
               <td className="px-6 py-4">400 ppm</td>
-              <td className="px-6 py-4">4-16-2021</td>
+              <td className="px-6 py-4">4-17-2024</td>
             </tr>
           </tbody>
         </table>
