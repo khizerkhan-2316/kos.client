@@ -21,7 +21,7 @@ function Homepage() {
               <td className="px-6 py-4">On</td>
               <td className="px-6 py-4">25°C</td>
               <td className="px-6 py-4">400 ppm</td>
-              <td className="px-6 py-4">4-16-2021</td>
+              <td className="px-6 py-4">5-17-2024</td>
             </tr>
           </tbody>
         </table>
