@@ -8,9 +8,10 @@ function Sidebar() {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       >
         <span className="sr-only">Open sidebar</span>
+        {/* Home icon */}
         <svg
           className="w-6 h-6"
           aria-hidden="true"
@@ -19,98 +20,91 @@ function Sidebar() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
           ></path>
         </svg>
+        {/* End of home icon */}
       </button>
       <aside
         id="default-sidebar"
-        className="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 w-[20%] border"
+        className="fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0 w-[20%] border bg-black text-white shadow-lg"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div className="h-full px-3 py-4 overflow-y-auto">
           <ul className="space-y-2 font-medium">
-            <li>
+            <li className="border-b border-gray-200 dark:border-gray-700">
               <Link
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-100"
                 to="/"
               >
-                {/* Home Icon */}
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  className="w-5 h-5 text-gray-500"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 22 21"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  <path d="M12 19V10L19 15V19H5V15L12 10" />
+                  <path
+                    fillRule="evenodd"
+                    d="M10 3.75a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0110 3.75zM10 15a.75.75 0 01-.75-.75V9.998L3.75 13.25v1.5L10 10.5V15zm-7.5-3.75A.75.75 0 012.25 10H10V4.248L2.25 7.5v3zm0 3.75a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-                {/* Home Icon End */}
-                <span className="ms-3">Home</span>
+                <span className="ml-3 text-sm font-medium">Home</span>
               </Link>
             </li>
 
-            <li>
+            <li className="border-b border-gray-200 dark:border-gray-700">
               <Link
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-100"
                 to="/dashboard"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  viewBox="0 0 22 21"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                  <path d="M21 12l-18 10v-20z" />
                 </svg>
-                <span className="ms-3">Dashboard</span>
+                <span className="ml-3 text-sm font-medium">Dashboard</span>
               </Link>
             </li>
-            <li>
+            <li className="border-b border-gray-200 dark:border-gray-700">
               <Link
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-100"
                 to="/control"
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  viewBox="0 0 18 18"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                  <path d="M3 3h18v2h-18zM3 7h18v2h-18zM3 11h18v2h-18zM3 15h18v2h-18z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">
-                  Aktuatorstyring
-                </span>
-                <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                  Pro
+                <span className="ml-3 text-sm font-medium">Aktuatorstyring</span>
+                <span className="inline-flex items-center justify-center px-2 ml-auto text-sm font-medium text-gray-800 bg-gray-100 rounded-full">
+                  Betal for adgang
                 </span>
               </Link>
             </li>
-            <li>
+            <li className="border-b border-gray-200 dark:border-gray-700">
               <Link
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-100"
                 to="/logs"
               >
                 <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  viewBox="0 0 20 20"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
+                  <path d="M13 0h-2v8h2v-8zM13 12h-2v4h2v-4zM19 4h-2v12h2v-12zM7 8h-2v8h2v-8zM1 16h2v4h-2v-4zM1 8h2v4h-2v-4zM7 0h-2v4h2v-4zM19 0h-2v4h2v-4z" />
                 </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Logs</span>
-                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                <span className="ml-3 text-sm font-medium">Logs</span>
+                <span className="inline-flex items-center justify-center w-6 h-6 ml-auto text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
                   3
                 </span>
               </Link>
