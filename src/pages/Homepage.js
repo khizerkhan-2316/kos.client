@@ -7,12 +7,12 @@ function Homepage() {
 
   return (
     <div className="container mx-auto border" style={{ background: '#F4F4F4', width: '87%', marginLeft: '13%' }}>
-      <h1 className="mt-16 mb-4 px-10 text-4xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">Welcome, User's Name</h1>
+      <h1 className="mt-16 mb-4 px-10 text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">Welcome, User's Name</h1>
       
       {/* Radiator Status Table */}
-      <h2 className="px-10 mt-10 text-3xl font-semibold text-gray-900">Radiator Status</h2>
-      <div className="mt-4 overflow-x-auto px-10 ">
-        <table className="w-full text-sm text-left text-gray-900 bg-black bg-opacity-50 rounded-lg">
+      <h2 className="px-10 mt-10 text-3xl font-semibold text-black">Radiator Status</h2>
+      <div className="mt-4 overflow-x-auto px-10 rounded-lg">
+        <table className="w-full text-sm text-left text-black bg-black bg-opacity-50 rounded-lg">
           <thead className="text-xs uppercase bg-gray-200">
             <tr>
               <th scope="col" className="px-6 py-3">Id</th>
@@ -37,9 +37,9 @@ function Homepage() {
       </div>
       
       {/* Window Status Table */}
-      <h2 className="px-10 mt-10 text-3xl font-semibold text-gray-900">Window Status</h2>
+      <h2 className="px-10 mt-10 text-3xl font-semibold text-black">Window Status</h2>
       <div className="mt-4 overflow-x-auto px-10">
-        <table className="w-full text-sm text-left text-gray-900 bg-black bg-opacity-50 rounded-lg">
+        <table className="w-full text-sm text-left text-black bg-black bg-opacity-50 rounded-lg">
           <thead className="text-xs uppercase bg-gray-200">
             <tr>
               <th scope="col" className="px-6 py-3">Id</th>

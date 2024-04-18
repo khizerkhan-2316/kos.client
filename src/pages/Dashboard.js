@@ -6,8 +6,8 @@ import {data} from "../data/mockData.js"
 function Dashboard() {
   return (
     <div className="w-[87%] ml-[13%]">
-      <h1 className="mt-[20px] p-10 text-4xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">Dashboard</h1>
-      <h2 className="p-10 text-3xl font-semibold text-gray-900">Temperature and CO2 Level</h2>
+      <h1 className="mt-[20px] p-10 text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">Dashboard</h1>
+      <h2 className="p-10 text-3xl font-semibold text-black">Temperature and CO2 Level</h2>
      
       <div className='flex'>  
         <div className='basic-[70%] mt-[-20px]'>
