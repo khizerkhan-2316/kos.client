@@ -6,12 +6,12 @@ import {data} from "../data/mockData.js"
 function Dashboard() {
   return (
     <div className="w-[87%] ml-[13%]">
-      <h1 className="mt-[100px] mb-4 text-4xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">Dashboard</h1>
-      <h2 className="mt-[50px] mb-4 text-3xl font-semibold text-gray-900">Temperature and CO2 Level</h2>
+      <h1 className="mt-[20px] p-10 text-4xl font-semibold leading-tight text-gray-900 md:text-5xl lg:text-6xl">Dashboard</h1>
+      <h2 className="p-10 text-3xl font-semibold text-gray-900">Temperature and CO2 Level</h2>
      
-      <div className='flex'>
-        <div className='basic-[70%]'>
-        <LineChart className='shadow-md rounded p-10 border ml-10'
+      <div className='flex'>  
+        <div className='basic-[70%] mt-[-20px]'>
+        <LineChart className='shadow-md rounded mt-[5px] p-10 border ml-10'
           width={1000}
           height={600}
           data={data}
