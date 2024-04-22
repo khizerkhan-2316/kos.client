@@ -7,8 +7,11 @@ function MockActuator() {
     useEffect(() => {
       // Generate random statuses for radiator and window
       const randomizeStatus = () => {
+        console.log("Updating statuses...");
         const randomRadiatorStatus = Math.random() < 0.5 ? 'On' : 'Off';
         const randomWindowStatus = Math.random() < 0.5 ? 'Open' : 'Close';
+        console.log("Radiator Status:", randomRadiatorStatus);
+        console.log("Window Status:", randomWindowStatus);
         setRadiatorStatus(randomRadiatorStatus);
         setWindowStatus(randomWindowStatus);
       };
@@ -22,7 +25,6 @@ function MockActuator() {
     }, []);
   
     return { radiatorStatus, windowStatus };
-  }
-  
-  export { MockActuator };
-  
+}
+
+export { MockActuator };

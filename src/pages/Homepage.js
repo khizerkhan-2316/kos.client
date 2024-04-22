@@ -1,9 +1,12 @@
 
 import { data } from '../data/mockData'; // Import the data array
-import '../Actuators/mockActuator'; // Import the data array
+import {MockActuator} from '../Actuators/mockActuator'; // Import the data array
 
-function Homepage({ radiatorStatus, windowStatus }) {
+function Homepage() {
   
+  // Get the radiatorStatus and windowStatus from MockActuator component
+  const { radiatorStatus, windowStatus } = MockActuator();
+
   // Get the latest entry
   const latestEntry = data[data.length - 1];
 
@@ -28,7 +31,7 @@ function Homepage({ radiatorStatus, windowStatus }) {
           <tbody>
             <tr className="bg-white border-b">
               <td className="px-6 py-4 whitespace-nowrap">Radiator 1</td>
-              <td className="px-6 py-4">{radiatorStatus? 'On' : 'Off'} {radiatorStatus ? <div className="w-3 h-3 rounded-full inline-block mr-3 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
+              <td className="px-6 py-4">{radiatorStatus} {radiatorStatus === 'On' ? <div className="w-3 h-3 rounded-full inline-block mr-3 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
               <td className="px-6 py-4">{latestEntry.time}</td>
@@ -55,7 +58,7 @@ function Homepage({ radiatorStatus, windowStatus }) {
           <tbody>
             <tr className="bg-white border-b">
               <td className="px-6 py-4 whitespace-nowrap">Window 1</td>
-              <td className="px-6 py-4">{windowStatus ? 'Open' : 'Close'} {windowStatus ? <div className="w-3 h-3 rounded-full inline-block mr-2 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
+              <td className="px-6 py-4">{windowStatus } {windowStatus === 'Open' ? <div className="w-3 h-3 rounded-full inline-block mr-2 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
               <td className="px-6 py-4">{latestEntry.time}</td>
