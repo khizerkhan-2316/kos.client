@@ -60,7 +60,7 @@ function Dashboard() {
               yAxisId="left"
               type="monotone"
               dataKey="temperature"
-              stroke="#8884d8"
+              stroke="#ba0921"
               strokeWidth={3}
               activeDot={{ r: 8 }}
               name="Temperature (°C)"
