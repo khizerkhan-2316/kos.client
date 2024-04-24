@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MdHome } from 'react-icons/md';
 import { RiDashboard2Fill } from 'react-icons/ri';
 import { AiOutlineControl } from 'react-icons/ai';
-import { FaStickyNote, FaChevronRight, FaRegCopyright } from 'react-icons/fa';
+import { FaStickyNote, FaChevronRight, FaRegCopy } from 'react-icons/fa';
 
 function Sidebar() {
   const [collapsed, setCollapsed] = useState(false); // State to track collapsed status
@@ -38,15 +38,14 @@ function Sidebar() {
           {collapsed ? 'AP' : 'Admin panel'}
         </h1>
       </div>
-      {!collapsed && (
+      <Link to="/" className="text-[14px] leading-[20px] font-bold text-white">
+        <div className="rounded flex items-center gap-[15px] pl-3 py-[10px] border-b-[1px] border-[#EDEDED]/[0.3] cursor-pointer">
+          <MdHome color="white" />
+          {collapsed ? null : "Homepage"}
+          {!collapsed && <FaChevronRight color="white" />}
+        </div>
+      </Link>
         <>
-          <Link to="/" className="text-[14px] leading-[20px] font-bold text-white">
-            <div className="rounded flex items-center gap-[15px] pl-3 py-[10px] border-b-[1px] border-[#EDEDED]/[0.3] cursor-pointer">
-              <MdHome color="white" />
-              Homepage
-            </div>
-          </Link>
-
           <div className="pt-[15px] border-b-[1px] border-[#EDEDED]/[0.3]">
             <p className="text-[10px]  font-extrabold leading-[16px] pl-3 text-white/[0.4]">
               {' '}
@@ -55,18 +54,20 @@ function Sidebar() {
             <Link to="/dashboard" className="text-[14px] leading-[20px] font-normal text-white">
               <div className="flex items-center mt-1 justify-between gap-[10px] py-[10px] cursor-pointer rounded">
                 <div className="flex pl-3 items-center gap-[10px]">
-                  <RiDashboard2Fill color="white" /> Dashboard
+                  <RiDashboard2Fill color="white" />
+                  {collapsed ? null : "Dashboard"}
+                  {!collapsed && <FaChevronRight color="white" />}
                 </div>
-                <FaChevronRight color="white" />
               </div>
             </Link>
 
             <Link to="/control" className="text-[14px] leading-[20px] font-normal text-white">
               <div className="flex items-center justify-between gap-[10px] py-[10px] rounded cursor-pointer">
                 <div className="flex pl-3 items-center gap-[10px]">
-                  <AiOutlineControl color="white" /> Actuator control
+                  <AiOutlineControl color="white" />
+                  {collapsed ? null : "Actuator control"}
+                  {!collapsed && <FaChevronRight color="white" />}
                 </div>
-                <FaChevronRight color="white" />
               </div>
             </Link>
           </div>
@@ -76,24 +77,27 @@ function Sidebar() {
               ADDONS
             </p>
             <Link to="/logs" className="text-[14px] leading-[20px] font-normal text-white">
-              <div className="flex items-center justify-between mt-1 gap-[10px] py-[10px] rounded cursor-pointer">
-                <div className="flex pl-3 items-center gap-[10px]">
-                  <FaStickyNote color="white" />
-                  Logs
-                </div>
-                <FaChevronRight color="white" />
-              </div>
-            </Link>
-          </div>
-          <div className="absolute bottom-[20px] left-[55px]">
-            <div className="flex items-center gap-[10px]">
-              <FaRegCopyright color="white" />
-              <p className="text-[14px] leading-[20px] font-normal text-white">
-                By Group 8
-              </p>
-            </div>
+  <div className="flex items-center justify-between mt-1 gap-[10px] py-[10px] rounded cursor-pointer">
+    <div className="flex pl-3 items-center gap-[10px]">
+      <FaStickyNote color="white" />
+      {collapsed ? null : "Logs"}
+      {!collapsed && <FaChevronRight color="white" />} {/* Render arrow only if not collapsed */}
+    </div>
+  </div>
+</Link>
+
           </div>
         </>
+  
+      {!collapsed && (
+        <div className="absolute bottom-[20px] left-[55px]">
+          <div className="flex items-center gap-[10px]">
+            <FaRegCopy color="white" />
+            <p className="text-[14px] leading-[20px] font-normal text-white">
+              By Group 8
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );
