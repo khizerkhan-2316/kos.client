@@ -34,7 +34,7 @@ function Homepage() {
               <td className="px-6 py-4">{radiatorStatus} {radiatorStatus === 'On' ? <div className="w-3 h-3 rounded-full inline-block mr-3 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
-              <td className="px-6 py-4">{new Date().toLocaleTimeString()}</td>
+              <td className="px-6 py-4">{latestEntry.time}</td>
               <td className="px-6 py-4">{new Date().toLocaleDateString()}</td>
             </tr>
           </tbody>
@@ -61,7 +61,7 @@ function Homepage() {
               <td className="px-6 py-4">{windowStatus } {windowStatus === 'Open' ? <div className="w-3 h-3 rounded-full inline-block mr-2 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
-              <td className="px-6 py-4">{new Date().toLocaleTimeString()}</td>
+              <td className="px-6 py-4">{latestEntry.time}</td>
               <td className="px-6 py-4">{new Date().toLocaleDateString()}</td>
             </tr>
           </tbody>
