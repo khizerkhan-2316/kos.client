@@ -21,8 +21,6 @@ function Control() {
   };
 
   useEffect(() => {
-    // Clean up localStorage when component unmounts
-
     if (localStorage.getItem('isRadiatorOn') === 'true') {
       setIsRadiatorOn(true);
     } else {
@@ -34,8 +32,6 @@ function Control() {
     } else {
       setIsWindowOpen(false);
     }
-
-    return () => {};
   }, []);
 
   return (
@@ -47,7 +43,7 @@ function Control() {
         This page allows you to control the heating and window systems in your
         smart home. Use the toggles below to adjust the settings as needed.
       </p>
-      <div className="w-[40%] ">
+      <div className="grid grid-cols-2 gap-6">
         <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg mb-6">
           <h2 className="text-3xl mt-[20%] font-bold mb-4">Radiator Control</h2>
           <p className="text-gray-700">
@@ -68,10 +64,8 @@ function Control() {
             </span>
           </label>
         </div>
-      </div>
-      <div className="w-[40%] ">
         <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg mb-6">
-          <h2 className="text-3xl font-bold mb-4">Window Control</h2>
+          <h2 className="text-3xl mt-[20%] font-bold mb-4">Window Control</h2>
           <p className="text-gray-700">
             Window is {isWindowOpen ? 'Open' : 'Closed'}
           </p>
