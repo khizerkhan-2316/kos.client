@@ -33,8 +33,8 @@ function Logs() {
           <tbody>
             {data.map((entry, index) => (
               <tr key={index} className="bg-white border-b text-black">
-                <td className="p-4">{entry.date}</td>
-                <td className="p-4">{entry.time}</td>
+                <td className="p-4">{new Date().toLocaleDateString()}</td>
+                <td className="p-4">{new Date().toLocaleTimeString()}</td>
                 <td className="px-6 py-4">{entry.temperature} °C</td>
                 <td className="px-6 py-4">{entry.co2Level} ppm</td>
               </tr>

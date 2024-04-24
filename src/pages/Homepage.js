@@ -11,7 +11,7 @@ function Homepage() {
   const latestEntry = data[data.length - 1];
 
   return (
-    <div className="container mx-auto border w-[40%] border ml-[60%] sm:w-[60%] sm:ml-[40%] md:w-[70%] md:ml-[30%] lg:w-[75%] lg:ml-[25%] xl:w-[80%] xl:ml-[20%] 2xl:w-[87%] 2xl:ml-[13%]" style={{ background: '#F4F4F4', width: '87%', marginLeft: '13%' }}>
+    <div className="w-[40%] border ml-[60%] sm:w-[60%] sm:ml-[40%] md:w-[70%] md:ml-[30%] lg:w-[75%] lg:ml-[25%] xl:w-[80%] xl:ml-[20%] 2xl:w-[87%] 2xl:ml-[13%]" style={{ background: '#F4F4F4', width: '87%', marginLeft: '13%' }}>
       <h1 className="mt-16 mb-4 px-10 text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">Welcome, User's Name</h1>
 
       {/* Radiator Status Table */}
@@ -34,7 +34,7 @@ function Homepage() {
               <td className="px-6 py-4">{radiatorStatus} {radiatorStatus === 'On' ? <div className="w-3 h-3 rounded-full inline-block mr-3 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
-              <td className="px-6 py-4">{latestEntry.time}</td>
+              <td className="px-6 py-4">{new Date().toLocaleTimeString()}</td>
               <td className="px-6 py-4">{new Date().toLocaleDateString()}</td>
             </tr>
           </tbody>
@@ -61,7 +61,7 @@ function Homepage() {
               <td className="px-6 py-4">{windowStatus } {windowStatus === 'Open' ? <div className="w-3 h-3 rounded-full inline-block mr-2 bg-green-500"></div> : <div className="w-3 h-3 rounded-full inline-block mr-2 bg-red-500"></div>}</td>
               <td className="px-6 py-4">{latestEntry.temperature}°C</td>
               <td className="px-6 py-4">{latestEntry.co2Level} ppm</td>
-              <td className="px-6 py-4">{latestEntry.time}</td>
+              <td className="px-6 py-4">{new Date().toLocaleTimeString()}</td>
               <td className="px-6 py-4">{new Date().toLocaleDateString()}</td>
             </tr>
           </tbody>
