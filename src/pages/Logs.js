@@ -9,6 +9,7 @@ function Logs() {
       <h1 className="mt-16 mb-4 px-10 text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">
         Activities logs{' '}
       </h1>
+      <h3 class="text-3xl font-bold dark:text-white ml-10">Measurements</h3>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-10 ">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-black bg-gray-500 bg-opacity-40 rounded-lg">
@@ -42,6 +43,7 @@ function Logs() {
           </tbody>
         </table>
       </div>
+      <h3 class="text-3xl font-bold dark:text-white ml-10">Control logs </h3>
     </div>
   );
 }
