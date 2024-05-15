@@ -5,7 +5,8 @@ const generateRandomData = (startHour, endHour, isAM) => {
   for (let i = startHour; i <= endHour; i++) {
     const newEntry = {
       time: `${i}:00 ${period}`,
-      temperature: Math.floor(Math.random() * (30 - 10 + 1)) + 10,
+      temperature_in: Math.floor(Math.random() * (30 - 10 + 1)) + 10,
+      temperature_out: Math.floor(Math.random() * (30 - 10 + 1)) + 10,
       co2Level: Math.floor(Math.random() * (500 - 100 + 1)) + 100,
     };
     data.push(newEntry);

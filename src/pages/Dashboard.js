@@ -59,11 +59,20 @@ function Dashboard() {
             <Line
               yAxisId="left"
               type="monotone"
-              dataKey="temperature"
+              dataKey="temperature_in"
               stroke="#ba0921"
               strokeWidth={3}
               activeDot={{ r: 8 }}
-              name="Temperature (°C)"
+              name="Temperature Indoor(°C)"
+            />
+             <Line
+              yAxisId="left"
+              type="monotone"
+              dataKey="temperature_out"
+              stroke="#f09e07"
+              strokeWidth={3}
+              activeDot={{ r: 8 }}
+              name="Temperature Outdoor (°C)"
             />
             <Line
               yAxisId="right"
