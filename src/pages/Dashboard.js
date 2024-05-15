@@ -10,8 +10,26 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { data } from '../data/mockData.js';
+import { getRequest } from '../utils/api.js';
+
+import { useState, useEffect } from 'react';
 
 function Dashboard() {
+  const [measurements, setMeasurements] = useState([]);
+
+  useEffect(() => {
+    const fetchMeasures = async () => {
+      try {
+        const measurementsData = await getRequest('measurements');
+        setMeasurements(measurementsData);
+        console.log(measurementsData);
+      } catch (e) {
+        console.log('error fetching measurements', e);
+      }
+    };
+
+    fetchMeasures();
+  }, []);
   return (
     <div className="w-[40%] border ml-[60%] sm:w-[60%] sm:ml-[40%] md:w-[70%] md:ml-[30%] lg:w-[75%] lg:ml-[25%] xl:w-[80%] xl:ml-[20%] 2xl:w-[87%] 2xl:ml-[13%]">
       <h1 className="mt-[20px] p-10 text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">
@@ -65,7 +83,7 @@ function Dashboard() {
               activeDot={{ r: 8 }}
               name="Temperature Indoor(°C)"
             />
-             <Line
+            <Line
               yAxisId="left"
               type="monotone"
               dataKey="temperature_out"
