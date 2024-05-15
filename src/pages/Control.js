@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 function Control() {
+  const [radiator, setRadiator] = useState();
+  const [window, setWindow] = useState();
+
   const [isRadiatorOn, setIsRadiatorOn] = useState(
     localStorage.getItem('isRadiatorOn') === 'true' ? true : false
   );
@@ -50,18 +53,24 @@ function Control() {
             Radiator is {isRadiatorOn ? 'On' : 'Off'}
           </p>
           <label className="inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              className="sr-only peer"
-              checked={isRadiatorOn}
-              onChange={toggleRadiator}
-            />
-            <div
-              className={`relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-500 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-500`}
-            />
-            <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-              Toggle Radiator
-            </span>
+            <select
+              id="radiator-level"
+              className="px-4 py-2 border rounded-md bg-white shadow-md"
+              value={1}
+            >
+              {[...Array(6).keys()].map((level) => (
+                <option key={level} value={level}>
+                  {level}
+                </option>
+              ))}
+            </select>
+
+            <button
+              type="button"
+              class="ml-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            >
+              Submit
+            </button>
           </label>
         </div>
         <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg mb-6">

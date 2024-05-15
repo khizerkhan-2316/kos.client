@@ -24,7 +24,7 @@ function Homepage() {
   useEffect(() => {
     const fetchActuators = async () => {
       try {
-        const actuators = await getRequest('/actuators');
+        const actuators = await getRequest('actuators');
 
         setWindow(actuators[0]);
         setRadiator(actuators[1]);
@@ -64,6 +64,10 @@ function Homepage() {
               </th>
 
               <th scope="col" className="px-6 py-3">
+                Radiator level
+              </th>
+
+              <th scope="col" className="px-6 py-3">
                 Radiator status updated at
               </th>
               <th scope="col" className="px-6 py-3">
@@ -94,6 +98,7 @@ function Homepage() {
                 )}
               </td>
 
+              <td className="px-6 py-4 whitespace-nowrap">{radiator.level}</td>
               <td className="px-6 py-4 whitespace-nowrap">
                 {radiator.updated_at}
               </td>
