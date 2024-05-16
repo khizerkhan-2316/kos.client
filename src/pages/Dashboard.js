@@ -1,18 +1,10 @@
 import React from 'react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts';
-import { data } from '../data/mockData.js';
+
 import { getRequest } from '../utils/api.js';
 
 import { useState, useEffect } from 'react';
+
+import Graph from '../components/Graph.js';
 
 function Dashboard() {
   const [measurements, setMeasurements] = useState([]);
@@ -22,7 +14,6 @@ function Dashboard() {
       try {
         const measurementsData = await getRequest('measurements');
         setMeasurements(measurementsData);
-        console.log(measurementsData);
       } catch (e) {
         console.log('error fetching measurements', e);
       }
@@ -41,66 +32,52 @@ function Dashboard() {
 
       <div className="flex">
         <div className="basic-[70%] mt-[-20px]">
-          <LineChart
-            className="shadow-md rounded mt-[5px] p-10 border ml-10"
-            width={1000}
-            height={600}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" />
-            <YAxis
-              yAxisId="left"
+          {measurements && (
+            <Graph
+              title="Inddørs temperatur"
+              data={measurements.filter(
+                (measurement) =>
+                  measurement.measurement_type === 'INDOOR_TEMPERATURE'
+              )}
               label={{
                 value: 'Temperature (°C)',
                 angle: -90,
                 position: 'insideLeft',
               }}
-            />
-            <YAxis
-              yAxisId="right"
-              label={{
-                value: 'CO2 Level (ppm)',
-                angle: -90,
-                position: 'insideRight',
-              }}
-              orientation="right"
-            />
-            <Tooltip />
-            <Legend />
-            <Line
-              yAxisId="left"
-              type="monotone"
-              dataKey="temperature_in"
-              stroke="#ba0921"
-              strokeWidth={3}
-              activeDot={{ r: 8 }}
               name="Temperature Indoor(°C)"
             />
-            <Line
-              yAxisId="left"
-              type="monotone"
-              dataKey="temperature_out"
-              stroke="#f09e07"
-              strokeWidth={3}
-              activeDot={{ r: 8 }}
-              name="Temperature Outdoor (°C)"
+          )}
+
+          {measurements && (
+            <Graph
+              title="Udenddørs temperatur"
+              data={measurements.filter(
+                (measurement) =>
+                  measurement.measurement_type === 'OUTDOOR_TEMPERATURE'
+              )}
+              label={{
+                value: 'Temperature (°C)',
+                angle: -90,
+                position: 'insideLeft',
+              }}
+              name="Temperature OUTDOOR(°C)"
             />
-            <Line
-              yAxisId="right"
-              type="monotone"
-              dataKey="co2Level"
-              stroke="#82ca9d"
-              strokeWidth={3}
-              name="CO2 Level (ppm)"
+          )}
+
+          {measurements && (
+            <Graph
+              title="CO2"
+              data={measurements.filter(
+                (measurement) => measurement.measurement_type === 'CO2'
+              )}
+              label={{
+                value: 'CO2 (PPM)',
+                angle: -90,
+                position: 'insideLeft',
+              }}
+              name="CO2 (PPM)"
             />
-          </LineChart>
+          )}
         </div>
         <div className="basic-[30%]"></div>
       </div>

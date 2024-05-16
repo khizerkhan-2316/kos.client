@@ -1,5 +1,4 @@
 import React from 'react';
-import { data } from '../data/mockData.js';
 import { useState, useEffect } from 'react';
 import { getRequest } from '../utils/api.js';
 

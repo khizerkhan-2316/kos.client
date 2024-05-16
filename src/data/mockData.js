@@ -1,4 +1,3 @@
-
 const generateRandomData = (startHour, endHour, isAM) => {
   const data = [];
   const period = isAM ? 'AM' : 'PM';
@@ -17,9 +16,7 @@ const generateRandomData = (startHour, endHour, isAM) => {
 const morningData = generateRandomData(8, 12, true);
 const afternoonData = generateRandomData(1, 10, false);
 
-const data = [
-  ...morningData,
-  ...afternoonData
-];
+const data = [...morningData, ...afternoonData];
 
+console.log(data);
 export { data };
